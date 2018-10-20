@@ -8,30 +8,14 @@
         <tr>
           <td>
             <mat-form-field>
-              <input matInput placeholder="Fullname" formControlName="fullname" name="fullname" required>
+              <input matInput placeholder="userName" formControlName="userName" name="userName" required>
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field>
-              <input matInput placeholder="Email" formControlName="email" name="email" required>
-              <mat-error *ngIf="email.invalid && email.errors.email">Invalid email address</mat-error>
-            </mat-form-field>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <mat-form-field>
-              <input matInput placeholder="Password" formControlName="password" type="password" name="password" required>
-            </mat-form-field>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <mat-form-field>
-              <input matInput placeholder="Reapet Password" formControlName="repeatPassword" type="password" name="repeatPassword" required>
-              <mat-error *ngIf="repeatPassword.invalid && repeatPassword.errors.passwordMatch">Password mismatch</mat-error>
+              <input type="number" matInput placeholder="Initial Balance" formControlName="initialBalance" name="initialBalance" required>
             </mat-form-field>
           </td>
         </tr>

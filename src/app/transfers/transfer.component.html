@@ -1,0 +1,28 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Send Payment</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <table cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Pay to" [(ngModel)]="payTo" name="payTo" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Amount" [(ngModel)]="amount" name="amount" required>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="pay()" color="primary">Pay</button>
+  </mat-card-actions>
+</mat-card>

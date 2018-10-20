@@ -13,11 +13,10 @@ export class AuthService {
 
   public $userSource = new Subject<any>();
 
-  login(email : string, password : string) : Observable <any> {
+  login(email : string) : Observable <any> {
     return Observable.create(observer => {
       this.http.post('/api/auth/login', {
         email,
-        password
       }).subscribe((data : any) => {
           observer.next({user: data.user});
           this.setUser(data.user);
@@ -27,13 +26,11 @@ export class AuthService {
     });
   }
 
-  register(fullname : string, email : string, password : string, repeatPassword : string) : Observable <any> {
+  register(userName : string, initialBalance : string) : Observable <any> {
     return Observable.create(observer => {
       this.http.post('/api/auth/register', {
-        fullname,
-        email,
-        password,
-        repeatPassword
+        userName,
+        balance: initialBalance,
       }).subscribe((data : any) => {
         observer.next({user: data.user});
         this.setUser(data.user);

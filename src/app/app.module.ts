@@ -15,12 +15,20 @@ import { CatchErrorInterceptor } from './interceptors/http-error.interceptor';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { TransferComponent } from './transfers/transfer.component';
+import { TransactionsService } from './transfers/transfers.service';
+import { TransactionsComponent } from './transactions/transactions.component';
+import { UsersComponent } from './users/users.component';
+import { UsersService } from './users/users.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
+    TransferComponent,
+    TransactionsComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,10 @@ import { HomeComponent } from './home/home.component';
     provide: HTTP_INTERCEPTORS,
     useClass: CatchErrorInterceptor,
     multi: true,
-  }],
+  },
+  TransactionsService,
+  UsersService
+],
   entryComponents: [],
   bootstrap: [AppComponent]
 })

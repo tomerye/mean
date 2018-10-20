@@ -1,0 +1,14 @@
+<table cellspacing="0">
+  <tr>
+    <th>from</th>
+    <th>to</th>
+    <th>amount</th>
+    <th>date</th>
+  </tr>
+  <tr *ngFor="let transaction of transactions">
+    <td>{{transaction.sourceUserName}}</td>
+    <td>{{transaction.targetUserName}}</td>
+    <td>{{transaction.amount}}</td>
+    <td>{{transaction.timestamp}}</td>
+  </tr>
+</table>
